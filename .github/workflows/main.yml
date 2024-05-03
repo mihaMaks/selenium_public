@@ -2,13 +2,9 @@
 name: solve daily worlde (macOS)
 
 on:
-  push:
-    branches:
-      - main
-  #schedule:
-   # - cron: "40 1 * * *"
-  #workflow_dispatch:
-  #  branches:
+
+  schedule:
+    - cron: "58 18 * * *"
 
 jobs:
   build:
