@@ -62,9 +62,8 @@ jobs:
 
     - name: move to dir # Move the generated files into output folder
       run: |
-        cd wordle_script
-        mkdir -p solves
-        mv *2024 solves
+        mkdir -p wordle_script/solves
+        mv wordle_script/*2024 wordle_script/solves
     - name: Commit files # commit the output folder
       run: |
         git config --local user.email "maksbertoncelj@gmail.com"
