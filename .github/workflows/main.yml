@@ -2,11 +2,11 @@
 name: solve daily worlde (macOS)
 
 on:
-  push:
-    branches:
-      - main
-  #schedule:
-  #  - cron: "0 20 * * *"
+  #push:
+   # branches:
+    #  - main
+  schedule:
+    - cron: "9 21 * * *"
   #  branches:
   #  - main
 
@@ -70,7 +70,6 @@ jobs:
         git config --local user.email "maksbertoncelj@gmail.com"
         git config --local user.name "mihaMaks"
         git add wordle_script
-        cat wordle_script/solves/*2024
         git commit -m "Add changes"
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
