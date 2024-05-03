@@ -65,7 +65,6 @@ jobs:
         cd wordle_script
         mkdir -p solves
         mv *2024 solves
-        # rm -d __pycache__
     - name: Commit files # commit the output folder
       run: |
         git config --local user.email "maksbertoncelj@gmail.com"
