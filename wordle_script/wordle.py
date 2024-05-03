@@ -133,4 +133,7 @@ class MyTests(BaseCase):
         possible_words = self.get_words('wordle_words_list')
         answer = self.solve(possible_words, 'crane')
         self.mprint(answer)
+        file_name = datetime.datetime.now().strftime('%d_%b_%Y')
+        f = open(file_name, "r")
+        print(f.readlines())
 
