@@ -58,7 +58,7 @@ jobs:
     - name: move to dir # Move the generated files into output folder
       run: |
         mkdir -p solves
-        mv *2024 /solves
+        mv *2024 .solves/
     - name: Commit files # commit the output folder
       run: |
         git config --local user.email "maksbertoncelj@gmail.com"
