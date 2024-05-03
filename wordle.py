@@ -17,7 +17,7 @@ class MyTests(BaseCase):
 
     def mprint(self, s):
         file_name = datetime.datetime.now().strftime('%d_%b_%Y')
-        file_name = 'solves/'.join(file_name)
+        file_name = '/solves/'.join(file_name)
         f = open(file_name, 'a')
         f.write(s.__repr__())
         f.write('\n')
