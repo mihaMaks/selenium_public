@@ -1,5 +1,5 @@
 
-name: Nightly Tests (macOS)
+name: solve daily worlde (macOS)
 
 on:
   push:
@@ -54,4 +54,23 @@ jobs:
     - name: pytest wordle.py
       run: |
         pytest wordle.py
+    - name: Commit files
+      id: commit
+      run: |
+        git config --local user.email "maksbertonclej@gmail.com"
+        git config --local user.name "mihaMaks"
+        git add --all
+        if [-z "$(git status --porcelain)"]; then
+           echo "::set-output name=push::false"
+        else
+           git commit -m "Add changes" -a
+           echo "::set-output name=push::true"
+        fi
+      shell: bash
+    - name: Push changes
+      if: steps.commit.outputs.push == 'true'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
   
