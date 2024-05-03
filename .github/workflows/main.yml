@@ -4,7 +4,7 @@ name: solve daily worlde (macOS)
 on:
 
   schedule:
-    - cron: "58 18 * * *"
+    - cron: "57 18 * * *"
 
 jobs:
   build:
