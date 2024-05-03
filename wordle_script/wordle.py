@@ -21,7 +21,6 @@ class MyTests(BaseCase):
         f.write(s.__repr__())
         f.write('\n')
         f.close()
-        print(s)
 
     def write(self, word):
         for letter in word:
@@ -134,6 +133,4 @@ class MyTests(BaseCase):
         answer = self.solve(possible_words, 'crane')
         self.mprint(answer)
         file_name = datetime.datetime.now().strftime('%d_%b_%Y')
-        f = open(file_name, "r")
-        print(f.readlines())
 
