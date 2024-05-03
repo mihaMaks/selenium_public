@@ -21,6 +21,7 @@ class MyTests(BaseCase):
         f.write(s.__repr__())
         f.write('\n')
         f.close()
+        print(s)
 
     def write(self, word):
         for letter in word:
