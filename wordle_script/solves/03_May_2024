@@ -1,0 +1,16 @@
+(1, 'crane')
+{'c': 'absent', 'r': 'absent', 'a': 'absent', 'n': 'correct', 'e': 'present'}
+{'correct': {'n': [3]}, 'present': {'e': [4]}, 'absent': {'c': 0, 'r': 1, 'a': 2}}
+['being', 'blend', 'blind', 'blink', 'blond', 'blunt', 'bound', 'bunny', 'doing', 'downy', 'dying', 'ebony', 'eking', 'event', 'eying', 'fiend', 'fling', 'flint', 'flung', 'flunk', 'found', 'funny', 'glint', 'going', 'hound', 'joint', 'lying', 'mound', 'mount', 'ninny', 'owing', 'penny', 'phony', 'plunk', 'point', 'pound', 'shiny', 'shunt', 'skunk', 'sling', 'slink', 'slung', 'slunk', 'sound', 'spend', 'spent', 'spiny', 'spunk', 'sting', 'stink', 'stint', 'stony', 'stung', 'stunk', 'stunt', 'suing', 'sunny', 'swing', 'swung', 'thing', 'think', 'thong', 'tying', 'using', 'vying', 'whiny', 'wound', 'young']
+(2, 'being')
+{'b': 'present', 'e': 'present', 'i': 'absent', 'n': 'correct', 'g': 'absent'}
+{'correct': {'n': [3]}, 'present': {'e': [4, 1], 'b': [0]}, 'absent': {'c': 0, 'r': 1, 'a': 2, 'i': 2, 'g': 4}}
+['downy', 'ebony', 'event', 'flunk', 'found', 'funny', 'hound', 'mound', 'mount', 'phony', 'plunk', 'pound', 'shunt', 'skunk', 'slunk', 'sound', 'spend', 'spent', 'spunk', 'stony', 'stunk', 'stunt', 'sunny', 'wound']
+(3, 'downy')
+{'d': 'absent', 'o': 'present', 'w': 'absent', 'n': 'correct', 'y': 'correct'}
+{'correct': {'n': [3], 'y': [4]}, 'present': {'e': [4, 1], 'b': [0], 'o': [1]}, 'absent': {'c': 0, 'r': 1, 'a': 2, 'i': 2, 'g': 4, 'd': 0, 'w': 2}}
+['ebony', 'funny', 'phony', 'stony', 'sunny']
+(4, 'ebony')
+{'e': 'correct', 'b': 'correct', 'o': 'correct', 'n': 'correct', 'y': 'correct'}
+{'correct': {'n': [3], 'y': [4], 'e': [0], 'b': [1], 'o': [2]}, 'present': {'e': [4, 1], 'b': [0], 'o': [1]}, 'absent': {'c': 0, 'r': 1, 'a': 2, 'i': 2, 'g': 4, 'd': 0, 'w': 2}}
+'SOLVED IN 4 ATTEMPTS!'
