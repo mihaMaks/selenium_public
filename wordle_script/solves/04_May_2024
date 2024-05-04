@@ -1,0 +1,24 @@
+(1, 'crane')
+{'c': 'absent', 'r': 'absent', 'a': 'present', 'n': 'absent', 'e': 'correct'}
+{'correct': {'e': [4]}, 'present': {'a': [2]}, 'absent': {'c': 0, 'r': 1, 'n': 3}}
+['abide', 'abode', 'above', 'abuse', 'adobe', 'agile', 'aisle', 'algae', 'alike', 'alive', 'amble', 'ample', 'amuse', 'apple', 'aside', 'awoke', 'badge', 'baste', 'bathe', 'belie', 'belle', 'bible', 'bilge', 'biome', 'bloke', 'booze', 'boule', 'budge', 'bugle', 'bulge', 'butte', 'delve', 'diode', 'dodge', 'eagle', 'elide', 'elite', 'elope', 'elude', 'etude', 'evoke', 'exile', 'fable', 'false', 'femme', 'fluke', 'flume', 'flute', 'fudge', 'fugue', 'gaffe', 'gauge', 'gauze', 'geese', 'glide', 'globe', 'glove', 'goose', 'gouge', 'guide', 'guile', 'guise', 'halve', 'haste', 'haute', 'hedge', 'house', 'imbue', 'issue', 'judge', 'ladle', 'lapse', 'lathe', 'latte', 'ledge', 'liege', 'lithe', 'lodge', 'loose', 'louse', 'maize', 'maple', 'masse', 'mauve', 'maybe', 'melee', 'midge', 'moose', 'mouse', 'movie', 'obese', 'olive', 'oxide', 'paste', 'pause', 'payee', 'pique', 'pixie', 'plume', 'poise', 'posse', 'pulse', 'queue', 'quite', 'quote', 'salve', 'saute', 'segue', 'seize', 'shove', 'siege', 'sieve', 'slide', 'slime', 'slope', 'smile', 'smite', 'smoke', 'smote', 'solve', 'spike', 'spite', 'spoke', 'stoke', 'stole', 'stove', 'style', 'suite', 'table', 'taste', 'tepee', 'theme', 'these', 'those', 'thyme', 'tilde', 'tithe', 'title', 'tulle', 'utile', 'vague', 'value', 'valve', 'vogue', 'waive', 'waste', 'wedge', 'while', 'white', 'whole', 'whose']
+(2, 'abide')
+{'a': 'present', 'b': 'absent', 'i': 'absent', 'd': 'absent', 'e': 'correct'}
+{'correct': {'e': [4]}, 'present': {'a': [2, 0]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'i': 2, 'd': 3}}
+['eagle', 'elope', 'evoke', 'false', 'femme', 'fluke', 'flume', 'flute', 'fugue', 'gaffe', 'gauge', 'gauze', 'geese', 'glove', 'goose', 'gouge', 'halve', 'haste', 'haute', 'house', 'lapse', 'lathe', 'latte', 'loose', 'louse', 'maple', 'masse', 'mauve', 'melee', 'moose', 'mouse', 'paste', 'pause', 'payee', 'plume', 'posse', 'pulse', 'queue', 'quote', 'salve', 'saute', 'segue', 'shove', 'slope', 'smoke', 'smote', 'solve', 'spoke', 'stoke', 'stole', 'stove', 'style', 'taste', 'tepee', 'theme', 'these', 'those', 'thyme', 'tulle', 'vague', 'value', 'valve', 'vogue', 'waste', 'whole', 'whose']
+(3, 'eagle')
+{'e': 'correct', 'a': 'correct', 'g': 'absent', 'l': 'present'}
+{'correct': {'e': [4], 'a': [1]}, 'present': {'a': [2, 0], 'l': [3]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'i': 2, 'd': 3, 'g': 2}}
+['false', 'halve', 'haste', 'haute', 'lapse', 'lathe', 'latte', 'masse', 'mauve', 'paste', 'pause', 'payee', 'salve', 'saute', 'taste', 'value', 'valve', 'waste']
+(4, 'false')
+{'f': 'absent', 'a': 'correct', 'l': 'correct', 's': 'absent', 'e': 'correct'}
+{'correct': {'e': [4], 'a': [1], 'l': [2]}, 'present': {'l': [3]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'i': 2, 'd': 3, 'g': 2, 'f': 0, 's': 3}}
+['halve', 'value', 'valve']
+(5, 'halve')
+{'h': 'absent', 'a': 'correct', 'l': 'correct', 'v': 'present', 'e': 'correct'}
+{'correct': {'e': [4], 'a': [1], 'l': [2]}, 'present': {'v': [3]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'i': 2, 'd': 3, 'g': 2, 'f': 0, 's': 3, 'h': 0}}
+['value']
+(6, 'value')
+{'v': 'correct', 'a': 'correct', 'l': 'correct', 'u': 'correct', 'e': 'correct'}
+{'correct': {'e': [4], 'a': [1], 'l': [2], 'v': [0], 'u': [3]}, 'present': {'v': [3]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'i': 2, 'd': 3, 'g': 2, 'f': 0, 's': 3, 'h': 0}}
+'SOLVED IN 6 ATTEMPTS!'
