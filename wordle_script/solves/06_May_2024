@@ -1,0 +1,25 @@
+(1, 'crane')
+{'c': 'absent', 'r': 'absent', 'a': 'correct', 'n': 'absent', 'e': 'correct'}
+{'correct': {'a': [2], 'e': [4]}, 'present': {}, 'absent': {'c': 0, 'r': 1, 'n': 3}}
+['abase', 'abate', 'adage', 'agape', 'agate', 'amaze', 'awake', 'blade', 'blame', 'blaze', 'elate', 'evade', 'flake', 'flame', 'glade', 'glaze', 'heave', 'image', 'lease', 'leave', 'ovate', 'phase', 'plate', 'quake', 'shade', 'shake', 'shale', 'shame', 'shape', 'shave', 'skate', 'slate', 'spade', 'stage', 'stake', 'stale', 'state', 'stave', 'suave', 'tease', 'usage', 'weave', 'whale']
+(2, 'abase')
+{'a': 'correct', 'b': 'absent', 's': 'present', 'e': 'correct'}
+{'correct': {'a': [2], 'e': [4]}, 'present': {'s': [2]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1}}
+['adage', 'agape', 'agate', 'amaze', 'awake', 'elate', 'evade', 'flake', 'flame', 'glade', 'glaze', 'heave', 'image', 'lease', 'leave', 'ovate', 'phase', 'plate', 'quake', 'shade', 'shake', 'shale', 'shame', 'shape', 'shave', 'skate', 'slate', 'spade', 'stage', 'stake', 'stale', 'state', 'stave', 'suave', 'tease', 'usage', 'weave', 'whale']
+(3, 'adage')
+{'a': 'correct', 'd': 'absent', 'g': 'absent', 'e': 'correct'}
+{'correct': {'a': [2], 'e': [4]}, 'present': {'s': [2]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'd': 1, 'g': 2}}
+['amaze', 'awake', 'elate', 'flake', 'flame', 'heave', 'lease', 'leave', 'ovate', 'phase', 'plate', 'quake', 'shake', 'shale', 'shame', 'shape', 'shave', 'skate', 'slate', 'stake', 'stale', 'state', 'stave', 'suave', 'tease', 'weave', 'whale']
+(4, 'amaze')
+{'a': 'correct', 'm': 'absent', 'z': 'absent', 'e': 'correct'}
+{'correct': {'a': [2], 'e': [4]}, 'present': {'s': [2]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'd': 1, 'g': 2, 'm': 1, 'z': 2}}
+['awake', 'elate', 'flake', 'heave', 'lease', 'leave', 'ovate', 'phase', 'plate', 'quake', 'shake', 'shale', 'shape', 'shave', 'skate', 'slate', 'stake', 'stale', 'state', 'stave', 'suave', 'tease', 'weave', 'whale']
+(5, 'awake')
+{'a': 'correct', 'w': 'absent', 'k': 'absent', 'e': 'correct'}
+{'correct': {'a': [2], 'e': [4]}, 'present': {'s': [2]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'd': 1, 'g': 2, 'm': 1, 'z': 2, 'w': 1, 'k': 2}}
+['elate', 'heave', 'lease', 'leave', 'ovate', 'phase', 'plate', 'shale', 'shape', 'shave', 'slate', 'stale', 'state', 'stave', 'suave', 'tease']
+(6, 'elate')
+{'e': 'correct', 'l': 'absent', 'a': 'correct', 't': 'absent'}
+{'correct': {'a': [2], 'e': [4]}, 'present': {'s': [2]}, 'absent': {'c': 0, 'r': 1, 'n': 3, 'b': 1, 'd': 1, 'g': 2, 'm': 1, 'z': 2, 'w': 1, 'k': 2, 'l': 1, 't': 3}}
+['heave', 'phase', 'shape', 'shave', 'suave']
+'NOT SOLVED!'
