@@ -29,11 +29,16 @@ class MyTests(BaseCase):
         self.click('[aria-label="enter"]')
         self.sleep(5)
 
-    def get_letter(self, letters_evaluated, state):
+    def get_letter(self, letters_evaluated, state, word):
         l = []
         for item, i in zip(letters_evaluated.items(), range(6)):
+            letter = item[0]
             if item[1] == state:
-                l.append((item[0], i))
+                tl = []
+                for i in range(len(word)):
+                    if letter == word[i]:
+                        tl.append(i)
+                l.append((item[0], tl))
         return l
 
     def word_possible(self, word, pass_requirements):
@@ -44,9 +49,11 @@ class MyTests(BaseCase):
 
         for letter_and_positions in pass_requirements['correct'].items():
             letter = letter_and_positions[0]
-            position = letter_and_positions[1][0]
-            if not word[position] == letter:
-                return False
+            positions = letter_and_positions[1]
+            for ix in positions:
+                if not word[ix] == letter:
+                    return False
+
 
         for letter_and_positions in pass_requirements['present'].items():
             letter = letter_and_positions[0]
@@ -54,7 +61,8 @@ class MyTests(BaseCase):
             for ix in positions:
                 if word[ix] == letter:
                     return False
-
+            if word.__contains__(letter):
+                return True
         return True
 
     def solved(self, pass_requirements):
@@ -77,31 +85,33 @@ class MyTests(BaseCase):
 
         return new_words
 
-    def add_requirements(self, pass_requirements, letters_evaluated):
-        for letter_and_position in self.get_letter(letters_evaluated, 'absent'):
+    def add_requirements(self, pass_requirements, letters_evaluated, word):
+        for letter_and_position in self.get_letter(letters_evaluated, 'absent', word):
             letter = letter_and_position[0]
             position = letter_and_position[1]
-            if not letter in pass_requirements['absent']:
+            if letter not in pass_requirements['absent']:
                 pass_requirements['absent'].update({letter: position})
 
-        for letter_and_position in self.get_letter(letters_evaluated, 'correct'):
+        for letter_and_position in self.get_letter(letters_evaluated, 'correct', word):
             letter = letter_and_position[0]
-            position = letter_and_position[1]
+            positions = letter_and_position[1]
             if letter in pass_requirements['correct']:
                 if letter in pass_requirements['present']:
                     pass_requirements['present'].pop(letter)
             else:
-                pass_requirements['correct'].update({letter: [position]})
+                pass_requirements['correct'].update({letter: positions})
 
-        for letter_and_position in self.get_letter(letters_evaluated, 'present'):
+        for letter_and_position in self.get_letter(letters_evaluated, 'present', word):
             letter = letter_and_position[0]
-            position = letter_and_position[1]
+            positions = letter_and_position[1]
             if letter in pass_requirements['present']:
                 l = pass_requirements['present'][letter]
-                l.append(position)
+                for pos in positions:
+                    if pos not in l:
+                        l.append(pos)
                 pass_requirements['present'].update({letter: l})
             else:
-                pass_requirements['present'].update({letter: [position]})
+                pass_requirements['present'].update({letter: positions})
 
 
     def solve(self, possible_words, word):
@@ -111,7 +121,7 @@ class MyTests(BaseCase):
             self.mprint((attempt, word))
             letters_evaluated = self.evaluate_letters(word, attempt)
             self.mprint(letters_evaluated)
-            self.add_requirements(pass_requirements, letters_evaluated)
+            self.add_requirements(pass_requirements, letters_evaluated, word)
             self.mprint(pass_requirements)
             if self.solved(pass_requirements):
                 return f'SOLVED IN {attempt} ATTEMPTS!'
@@ -129,8 +139,7 @@ class MyTests(BaseCase):
         self.open('https://www.nytimes.com/games/wordle/index.html')
         self.click('button[data-testid="Play"]')
         self.click('svg[data-testid="icon-close"]')
-        possible_words = self.get_words('wordle_words_list')
+        possible_words = self.get_words('wordle_script/wordle_words_list')
         answer = self.solve(possible_words, 'crane')
         self.mprint(answer)
-        file_name = datetime.datetime.now().strftime('%d_%b_%Y')
 
