@@ -139,7 +139,7 @@ class MyTests(BaseCase):
         self.open('https://www.nytimes.com/games/wordle/index.html')
         self.click('button[data-testid="Play"]')
         self.click('svg[data-testid="icon-close"]')
-        possible_words = self.get_words('wordle_script/wordle_words_list')
+        possible_words = self.get_words('wordle_words_list')
         answer = self.solve(possible_words, 'crane')
         self.mprint(answer)
 
