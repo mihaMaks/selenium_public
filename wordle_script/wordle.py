@@ -4,6 +4,7 @@ Then have your test classes inherit it.
 BaseTestCase inherits SeleniumBase methods from BaseCase."""
 from seleniumbase import BaseCase
 import datetime
+import pickle as pkl
 
 
 class MyTests(BaseCase):
@@ -113,8 +114,17 @@ class MyTests(BaseCase):
             else:
                 pass_requirements['present'].update({letter: positions})
 
+    def score(self, word, distribution):
+        score = 0
+        s = set()
+        for lt in word:
+            s.add(lt)
+        for lt in s:
+            #self.mprint(distribution[lt])
+            score += distribution[lt]
 
-    def solve(self, possible_words, word):
+        return score
+    def solve(self, possible_words, word, letter_scores):
         pass_requirements = {'correct': {}, 'present': {}, 'absent': {}}
         for attempt in range(1, 7):
             self.write(word)
@@ -126,11 +136,15 @@ class MyTests(BaseCase):
             if self.solved(pass_requirements):
                 return f'SOLVED IN {attempt} ATTEMPTS!'
             possible_words = self.evaluate(possible_words, attempt, word, pass_requirements)
+            best_words = []
+            for wrd in possible_words:
+                best_words.append((wrd, self.score(word, letter_scores)))
+            best_words.sort(key=lambda x: -x[1])
             i = 0
-            while word == possible_words[i]:
+            while word == best_words[i][0]:
                 i+=1
 
-            word = possible_words[i]
+            word = best_words[i][0]
             self.mprint(possible_words)
 
         return "NOT SOLVED!"
@@ -140,6 +154,10 @@ class MyTests(BaseCase):
         self.click('button[data-testid="Play"]')
         self.click('svg[data-testid="icon-close"]')
         possible_words = self.get_words('wordle_words_list')
-        answer = self.solve(possible_words, 'crane')
+        f = open('letter_scores.pkl', 'rb')
+        letter_scores = pkl.load(f)
+        self.mprint(letter_scores)
+        f.close()
+        answer = self.solve(possible_words, 'crane', letter_scores)
         self.mprint(answer)
 
