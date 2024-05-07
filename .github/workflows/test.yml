@@ -1,0 +1,79 @@
+
+name: solve daily worlde (macOS)
+
+on:
+  push:
+    branches:
+      - main
+ # schedule:
+   # - cron: "20 0 * * *"
+  #  branches:
+  #  - main
+
+jobs:
+  build:
+
+    env:
+      PY_COLORS: "1"
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        cd wordle_script
+        python -m pip install --upgrade pip
+        python -m pip install --upgrade wheel
+        pip install -r requirements.txt
+    - name: Install SeleniumBase
+      run: |
+        cd wordle_script
+        pip install seleniumbase
+    - name: Check the console scripts interface
+      run: |
+        cd wordle_script
+        seleniumbase
+        sbase
+    - name: Install chromedriver
+      run: |
+        cd wordle_script
+        seleniumbase install chromedriver
+    - name: Make sure pytest is working
+      run: |
+        echo "def test_1(): pass" > nothing.py
+        pytest nothing.py
+    - name: Make sure nosetests is working
+      run: |
+        echo "def test_2(): pass" > nothing2.py
+        nosetests nothing2.py
+    - name: pytest wordle.py
+      run: |
+        cd wordle_script
+        pytest wordle.py
+
+    - name: move to dir # Move the generated files into output folder
+      run: |
+        cd wordle_script
+        mkdir -p solves
+        mv *2024 solves
+    - name: Commit files # commit the output folder
+      run: |
+        git config --local user.email "maksbertoncelj@gmail.com"
+        git config --local user.name "mihaMaks"
+        git add wordle_script
+        git commit -m "Add changes"
+    - name: Push changes # push the output folder to your repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true
+
