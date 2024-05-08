@@ -126,10 +126,26 @@ class MyTests(BaseCase):
         return score
     def solve(self, possible_words, word, letter_scores):
         pass_requirements = {'correct': {}, 'present': {}, 'absent': {}}
+        incorrect_guesses = 0
         for attempt in range(1, 7):
+            attempt = attempt-incorrect_guesses
             self.write(word)
             self.mprint((attempt, word))
             letters_evaluated = self.evaluate_letters(word, attempt)
+            if 'tbd' in letters_evaluated.values():
+                possible_words.remove(word)
+                self.mprint(possible_words)
+                b = False
+                for w in possible_words:
+                    if not w == word:
+                        word = w
+                        for i in range(5):
+                            self.click('[aria-label="backspace"]')
+                        b = True
+                        break
+                if b:
+                    incorrect_guesses += 1
+                    continue
             self.mprint(letters_evaluated)
             self.add_requirements(pass_requirements, letters_evaluated, word)
             self.mprint(pass_requirements)
@@ -153,7 +169,7 @@ class MyTests(BaseCase):
         self.open('https://www.nytimes.com/games/wordle/index.html')
         self.click('button[data-testid="Play"]')
         self.click('svg[data-testid="icon-close"]')
-        possible_words = self.get_words('wordle_words_list')
+        possible_words = self.get_words('wordlist_fives.txt')
         f = open('letter_scores.pkl', 'rb')
         letter_scores = pkl.load(f)
         self.mprint(letter_scores)
