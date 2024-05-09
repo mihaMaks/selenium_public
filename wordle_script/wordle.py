@@ -90,6 +90,8 @@ class MyTests(BaseCase):
         for letter_and_position in self.get_letter(letters_evaluated, 'absent', word):
             letter = letter_and_position[0]
             position = letter_and_position[1]
+            if letter in pass_requirements['correct'] or letter in pass_requirements['present']:
+                continue
             if letter not in pass_requirements['absent']:
                 pass_requirements['absent'].update({letter: position})
 
