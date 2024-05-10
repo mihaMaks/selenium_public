@@ -45,6 +45,15 @@ class MyTests(BaseCase):
     def word_possible(self, word, pass_requirements):
         for letter_and_positions in pass_requirements['absent'].items():
             letter = letter_and_positions[0]
+            if letter in pass_requirements['correct'].items() and letter in pass_requirements['present'].items():
+                if word.count(letter) >= 3:
+                    return False
+
+            if letter in pass_requirements['correct'].items() or letter in pass_requirements['present'].items():
+                if word.count(letter) >= 2:
+                    return False
+                continue
+
             if word.__contains__(letter):
                 return False
 
@@ -54,7 +63,6 @@ class MyTests(BaseCase):
             for ix in positions:
                 if not word[ix] == letter:
                     return False
-
 
         for letter_and_positions in pass_requirements['present'].items():
             letter = letter_and_positions[0]
@@ -90,8 +98,6 @@ class MyTests(BaseCase):
         for letter_and_position in self.get_letter(letters_evaluated, 'absent', word):
             letter = letter_and_position[0]
             position = letter_and_position[1]
-            if letter in pass_requirements['correct'] or letter in pass_requirements['present']:
-                continue
             if letter not in pass_requirements['absent']:
                 pass_requirements['absent'].update({letter: position})
 
