@@ -70,8 +70,9 @@ class MyTests(BaseCase):
             for ix in positions:
                 if word[ix] == letter:
                     return False
-            if word.__contains__(letter):
-                return True
+            if not word.__contains__(letter):
+                return False
+
         return True
 
     def solved(self, pass_requirements):
@@ -128,15 +129,13 @@ class MyTests(BaseCase):
         for lt in word:
             s.add(lt)
         for lt in s:
-            #self.mprint(distribution[lt])
             score += distribution[lt]
 
         return score
     def solve(self, possible_words, word, letter_scores):
         pass_requirements = {'correct': {}, 'present': {}, 'absent': {}}
-        incorrect_guesses = 0
-        for attempt in range(1, 7):
-            attempt = attempt-incorrect_guesses
+        attempt = 1
+        while attempt < 7:
             self.write(word)
             self.mprint((attempt, word))
             letters_evaluated = self.evaluate_letters(word, attempt)
@@ -152,7 +151,6 @@ class MyTests(BaseCase):
                         b = True
                         break
                 if b:
-                    incorrect_guesses += 1
                     continue
             self.mprint(letters_evaluated)
             self.add_requirements(pass_requirements, letters_evaluated, word)
@@ -160,16 +158,29 @@ class MyTests(BaseCase):
             if self.solved(pass_requirements):
                 return f'SOLVED IN {attempt} ATTEMPTS!'
             possible_words = self.evaluate(possible_words, attempt, word, pass_requirements)
+            if len(possible_words) == 0:
+                word = 'crane'
+                attempt += 1
+                continue
             best_words = []
             for wrd in possible_words:
                 best_words.append((wrd, self.score(word, letter_scores)))
             best_words.sort(key=lambda x: -x[1])
+            self.mprint(possible_words)
             i = 0
             while word == best_words[i][0]:
-                i+=1
-
+                i += 1
             word = best_words[i][0]
-            self.mprint(possible_words)
+            attempt += 1
+
+        self.mprint(attempt)
+        if attempt == 7:
+            self.sleep(5)
+            self.click('svg[data-testid="icon-close"]')
+            self.sleep(5)
+            self.click('svg[data-testid="icon-close"]')
+            answr = self.find_element('.Toast-module_toast__iiVsN').text
+            return f'NOT SOLVED EMPTY WORD LIST LOOKING FOR WORD: {answr.lower()}'
 
         return "NOT SOLVED!"
 
