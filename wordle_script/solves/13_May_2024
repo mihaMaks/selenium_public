@@ -1,0 +1,13 @@
+{'a': 2348, 'b': 715, 'c': 964, 'd': 1181, 'e': 3009, 'f': 561, 'g': 679, 'h': 814, 'i': 1592, 'j': 89, 'k': 596, 'l': 1586, 'm': 843, 'n': 1285, 'o': 1915, 'p': 955, 'q': 53, 'r': 1910, 's': 3033, 't': 1585, 'u': 1089, 'v': 318, 'w': 505, 'x': 139, 'y': 886, 'z': 135}
+(1, 'crane')
+{'c': 'correct', 'r': 'absent', 'a': 'absent', 'n': 'present', 'e': 'absent'}
+{'correct': {'c': [0]}, 'present': {'n': [3]}, 'absent': {'r': [1], 'a': [2], 'e': [4]}}
+['clown', 'colon', 'cinch', 'conic', 'conch', 'cynic', 'cumin', 'codon', 'conks', 'condo', 'cunts']
+(2, 'clown')
+{'c': 'correct', 'l': 'absent', 'o': 'absent', 'w': 'absent', 'n': 'correct'}
+{'correct': {'c': [0], 'n': [4]}, 'present': {'n': [3]}, 'absent': {'r': [1], 'a': [2], 'e': [4], 'l': [1], 'o': [2], 'w': [3]}}
+['cumin']
+(3, 'cumin')
+{'c': 'correct', 'u': 'correct', 'm': 'correct', 'i': 'correct', 'n': 'correct'}
+{'correct': {'c': [0], 'n': [4], 'u': [1], 'm': [2], 'i': [3]}, 'present': {}, 'absent': {'r': [1], 'a': [2], 'e': [4], 'l': [1], 'o': [2], 'w': [3]}}
+'SOLVED IN 3 ATTEMPTS!'
