@@ -1,0 +1,13 @@
+{'a': 2348, 'b': 715, 'c': 964, 'd': 1181, 'e': 3009, 'f': 561, 'g': 679, 'h': 814, 'i': 1592, 'j': 89, 'k': 596, 'l': 1586, 'm': 843, 'n': 1285, 'o': 1915, 'p': 955, 'q': 53, 'r': 1910, 's': 3033, 't': 1585, 'u': 1089, 'v': 318, 'w': 505, 'x': 139, 'y': 886, 'z': 135}
+(1, 'crane')
+{'c': 'absent', 'r': 'absent', 'a': 'correct', 'n': 'absent', 'e': 'absent'}
+{'correct': {'a': [2]}, 'present': {}, 'absent': {'c': [0], 'r': [1], 'n': [3], 'e': [4]}}
+['small', 'shall', 'glass', 'boats', 'plays', 'staff', 'flash', 'goats', 'stall', 'stamp', 'stays', 'blast', 'loads', 'toads', 'goals', 'shaft', 'toast', 'stalk', 'flags', 'swamp', 'flask', 'flats', 'slash', 'shawl', 'boast', 'shady', 'flaps', 'adapt', 'await', 'smash', 'slabs', 'shaky', 'quail', 'llama', 'soaks', 'plaid', 'soaps', 'psalm', 'plaza', 'dials', 'slaps', 'foams', 'flaky', 'flaws', 'soapy', 'spasm', 'khaki', 'loath', 'slats', 'flail', 'thaws', 'slams', 'ovals', 'stabs', 'foals', 'shalt', 'opals', 'koala', 'quays', 'amass', 'stags', 'sways', 'slays', 'spats', 'moats', 'vials', 'slags', 'plait', 'swaps', 'goads', 'shams', 'quaff', 'loams', 'qualm', 'flays', 'loafs', 'okays', 'swats', 'swabs', 'okapi', 'avail', 'foamy', 'swash', 'awash', 'staid', 'swath', 'imams', 'aways', 'quads', 'loamy', 'hoagy', 'guava', 'avast', 'swami', 'quasi', 'blabs', 'quash', 'quals', 'ikats', 'fiats', 'abash', 'shahs', 'shags', 'stash', 'whams', 'spays', 'blats', 'stats', 'luaus', 'toady', 'duals', 'staph', 'blahs', 'quais', 'dyads', 'thats', 'plasm', 'shads', 'flams', 'plats', 'amahs', 'blash', 'imago', 'shays', 'plash', 'shawm', 'diazo', 'glads', 'spazz', 'shako', 'flaks', 'flabs', 'slaws', 'stagy', 'miaow', 'whats', 'playa', 'swags', 'twats', 'abaft']
+(2, 'small')
+{'s': 'present', 'm': 'correct', 'a': 'correct', 'l': 'absent'}
+{'correct': {'a': [2], 'm': [1]}, 'present': {'s': [0]}, 'absent': {'c': [0], 'r': [1], 'n': [3], 'e': [4], 'l': [3, 4]}}
+['amass', 'imams', 'amahs']
+(3, 'amass')
+{'a': 'correct', 'm': 'correct', 's': 'correct'}
+{'correct': {'a': [2], 'm': [1], 's': [3, 4]}, 'present': {'s': [0]}, 'absent': {'c': [0], 'r': [1], 'n': [3], 'e': [4], 'l': [3, 4]}}
+'SOLVED IN 3 ATTEMPTS!'
