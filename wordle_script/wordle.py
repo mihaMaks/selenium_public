@@ -76,7 +76,7 @@ class MyTests(BaseCase):
         return True
 
     def solved(self, pass_requirements):
-        if len(pass_requirements['correct']) == 5:
+        if 'present' not in pass_requirements.values() and 'absent' not in pass_requirements.values():
             return True
         return False
 
@@ -155,7 +155,7 @@ class MyTests(BaseCase):
             self.mprint(letters_evaluated)
             self.add_requirements(pass_requirements, letters_evaluated, word)
             self.mprint(pass_requirements)
-            if self.solved(pass_requirements):
+            if self.solved(letters_evaluated):
                 return f'SOLVED IN {attempt} ATTEMPTS!'
             possible_words = self.evaluate(possible_words, attempt, word, pass_requirements)
             if len(possible_words) == 0:
