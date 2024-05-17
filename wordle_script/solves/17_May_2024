@@ -1,0 +1,23 @@
+{'a': 2348, 'b': 715, 'c': 964, 'd': 1181, 'e': 3009, 'f': 561, 'g': 679, 'h': 814, 'i': 1592, 'j': 89, 'k': 596, 'l': 1586, 'm': 843, 'n': 1285, 'o': 1915, 'p': 955, 'q': 53, 'r': 1910, 's': 3033, 't': 1585, 'u': 1089, 'v': 318, 'w': 505, 'x': 139, 'y': 886, 'z': 135}
+(1, 'crane')
+{'c': 'absent', 'r': 'present', 'a': 'absent', 'n': 'absent', 'e': 'absent'}
+{'correct': {}, 'present': {'r': [1]}, 'absent': {'c': [0], 'a': [2], 'n': [3], 'e': [4]}}
+['words', 'first', 'right', 'world', 'story', 'short', 'birds', 'girls', 'third', 'hours', 'forms', 'floor', 'works', 'forth', 'roots', 'worth', 'storm', 'hurry', 'sorry', 'rough', 'throw', 'doors', 'worry', 'strip', 'rooms', 'motor', 'shirt', 'flour', 'birth', 'glory', 'yours', 'burst', 'forty', 'dirty', 'worst', 'skirt', 'sport', 'worms', 'rolls', 'sword', 'sorts', 'humor', 'ports', 'firms', 'rigid', 'robot', 'roofs', 'rusty', 'virus', 'lords', 'burro', 'syrup', 'fours', 'pours', 'ivory', 'odors', 'tumor', 'forts', 'vigor', 'risks', 'furry', 'rotor', 'whirl', 'hurts', 'spurs', 'strum', 'shrub', 'tutor', 'forks', 'risky', 'riots', 'stirs', 'roost', 'swirl', 'mirth', 'murky', 'burly', 'spurt', 'rumor', 'tours', 'shrug', 'strut', 'myrrh', 'ruddy', 'girth', 'burrs', 'stork', 'forum', 'fiord', 'roomy', 'visor', 'throb', 'moors', 'firth', 'twirl', 'torso', 'dowry', 'smirk', 'surly', 'quirk', 'rugby', 'rigor', 'lurid', 'rumps', 'rusts', 'juror', 'flirt', 'wordy', 'slurs', 'fords', 'sprig', 'forgo', 'lurks', 'fjord', 'rills', 'shirk', 'ruffs', 'wormy', 'blurs', 'sirup', 'rifts', 'whirs', 'routs', 'girds', 'usurp', 'blurb', 'sours', 'rummy', 'hurls', 'rooks', 'romps', 'turfs', 'dirks', 'blurt', 'dirts', 'surfs', 'furls', 'murks', 'purrs', 'gourd', 'rowdy', 'whirr', 'quirt', 'gyros', 'sprit', 'furor', 'vitro', 'slurp', 'vizor', 'turbo', 'purty', 'rusks', 'lorry', 'boors', 'gurus', 'surds', 'horsy', 'burls', 'wurst', 'whorl', 'dorky', 'dorks', 'ritzy', 'torus', 'girts', 'rutty', 'torts', 'durst', 'porky', 'girly', 'roust', 'burgs', 'odour', 'houri', 'burps', 'usury', 'dorms', 'strop', 'tyros', 'roils', 'dolor', 'morts', 'thrum', 'purls', 'hydro', 'tiros', 'turps', 'rooty', 'ridgy', 'roids', 'yurts', 'lordy', 'torsi', 'roily', 'ribby', 'porgy', 'twirp', 'giros', 'sprog', 'porks', 'hurly', 'smurf', 'roods', 'kirks', 'forky', 'turdy', 'worts', 'rooky', 'burry', 'turfy', 'impro', 'shirr', 'turds', 'spoor', 'morph', 'rhumb']
+(2, 'words')
+{'w': 'absent', 'o': 'present', 'r': 'present', 'd': 'absent', 's': 'absent'}
+{'correct': {}, 'present': {'r': [1, 2], 'o': [1]}, 'absent': {'c': [0], 'a': [2], 'n': [3], 'e': [4], 'w': [0], 'd': [3], 's': [4]}}
+['floor', 'flour', 'glory', 'humor', 'ivory', 'tumor', 'vigor', 'tutor', 'rumor', 'rigor', 'vitro', 'vizor', 'impro']
+(3, 'floor')
+{'f': 'absent', 'l': 'absent', 'o': 'correct', 'r': 'correct'}
+{'correct': {'o': [2, 3], 'r': [4]}, 'present': {'r': [1, 2], 'o': [1]}, 'absent': {'c': [0], 'a': [2], 'n': [3], 'e': [4], 'w': [0], 'd': [3], 's': [4], 'f': [0], 'l': [1]}}
+(4, 'crane')
+{'c': 'absent', 'r': 'present', 'a': 'absent', 'n': 'absent', 'e': 'absent'}
+{'correct': {'o': [2, 3], 'r': [4]}, 'present': {'r': [1, 2], 'o': [1]}, 'absent': {'c': [0], 'a': [2], 'n': [3], 'e': [4], 'w': [0], 'd': [3], 's': [4], 'f': [0], 'l': [1]}}
+(5, 'crane')
+{'c': 'absent', 'r': 'present', 'a': 'absent', 'n': 'absent', 'e': 'absent'}
+{'correct': {'o': [2, 3], 'r': [4]}, 'present': {'r': [1, 2], 'o': [1]}, 'absent': {'c': [0], 'a': [2], 'n': [3], 'e': [4], 'w': [0], 'd': [3], 's': [4], 'f': [0], 'l': [1]}}
+(6, 'crane')
+{'c': 'absent', 'r': 'present', 'a': 'absent', 'n': 'absent', 'e': 'absent'}
+{'correct': {'o': [2, 3], 'r': [4]}, 'present': {'r': [1, 2], 'o': [1]}, 'absent': {'c': [0], 'a': [2], 'n': [3], 'e': [4], 'w': [0], 'd': [3], 's': [4], 'f': [0], 'l': [1]}}
+7
+'NOT SOLVED EMPTY WORD LIST LOOKING FOR WORD: tutor'
