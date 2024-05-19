@@ -34,11 +34,11 @@ class MyTests(BaseCase):
         l = []
         for item, i in zip(letters_evaluated.items(), range(6)):
             letter = item[0]
-            if item[1] == state:
-                tl = []
-                for i in range(len(word)):
-                    if letter == word[i]:
-                        tl.append(i)
+            if item[1][1] == state:
+                tl = [item[1][0]]
+                #for i in range(len(word)):
+                 #   if letter == word[i]:
+                  #      tl.append(i)
                 l.append((item[0], tl))
         return l
 
@@ -72,19 +72,19 @@ class MyTests(BaseCase):
                     return False
             if not word.__contains__(letter):
                 return False
-
         return True
 
     def solved(self, pass_requirements):
-        if 'present' not in pass_requirements.values() and 'absent' not in pass_requirements.values():
+        if 'present' not in [tup[1] for tup in pass_requirements.values()] and 'absent' not in [tup[1] for tup in pass_requirements.values()]:
             return True
         return False
 
     def evaluate_letters(self, word, attempt):
         row = '[aria-label="Row %s"] [aria-roledescription="tile"]' % str(attempt)
         letters_evaluated = {}
-        for letter, tile in zip(word, self.find_elements(row)):
-            letters_evaluated.update({letter: tile.get_attribute('data-state')})
+        #TODO letters can be present and correct and it overwrites dict becoouse keys should bee uniqe
+        for letter, tile, pos in zip(word, self.find_elements(row), range(5)):
+            letters_evaluated.update({letter: (pos, tile.get_attribute('data-state'))})
         return letters_evaluated
 
     def evaluate(self, possible_words, attempt, word, pass_requirements):
@@ -106,8 +106,12 @@ class MyTests(BaseCase):
             letter = letter_and_position[0]
             positions = letter_and_position[1]
             if letter in pass_requirements['correct']:
-                if letter in pass_requirements['present']:
-                    pass_requirements['present'].pop(letter)
+                l = pass_requirements['correct'][letter]
+                for pos in positions:
+                    if pos not in l:
+                        l.append(pos)
+                pass_requirements['correct'].update({letter: l})
+
             else:
                 pass_requirements['correct'].update({letter: positions})
 
@@ -139,7 +143,7 @@ class MyTests(BaseCase):
             self.write(word)
             self.mprint((attempt, word))
             letters_evaluated = self.evaluate_letters(word, attempt)
-            if 'tbd' in letters_evaluated.values():
+            if 'tbd' in [tup[1] for tup in letters_evaluated.values()]:
                 possible_words.remove(word)
                 self.mprint(possible_words)
                 b = False
