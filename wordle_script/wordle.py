@@ -34,22 +34,19 @@ class MyTests(BaseCase):
         l = []
         for item, i in zip(letters_evaluated.items(), range(6)):
             letter = item[0]
-            if item[1][1] == state:
-                tl = [item[1][0]]
-                #for i in range(len(word)):
-                 #   if letter == word[i]:
-                  #      tl.append(i)
-                l.append((item[0], tl))
+            for stt in item[1].keys():
+                if stt == state:
+                    l.append((letter, item[1][stt]))
         return l
 
     def word_possible(self, word, pass_requirements):
         for letter_and_positions in pass_requirements['absent'].items():
             letter = letter_and_positions[0]
-            if letter in pass_requirements['correct'].items() and letter in pass_requirements['present'].items():
+            if letter in pass_requirements['correct'].keys() and letter in pass_requirements['present'].keys():
                 if word.count(letter) >= 3:
                     return False
 
-            if letter in pass_requirements['correct'].items() or letter in pass_requirements['present'].items():
+            if letter in pass_requirements['correct'].keys() or letter in pass_requirements['present'].keys():
                 if word.count(letter) >= 2:
                     return False
                 continue
@@ -72,19 +69,42 @@ class MyTests(BaseCase):
                     return False
             if not word.__contains__(letter):
                 return False
+
+        for letter_and_positions in pass_requirements['multiple'].items():
+            letter = letter_and_positions[0]
+            positions = letter_and_positions[1]
+            if word.count(letter) < positions[0]:
+                return False
         return True
 
-    def solved(self, pass_requirements):
-        if 'present' not in [tup[1] for tup in pass_requirements.values()] and 'absent' not in [tup[1] for tup in pass_requirements.values()]:
-            return True
-        return False
+    def solved(self, letters_evaluated):
+        for letter_item in letters_evaluated.values():
+            if 'present' in letter_item.keys():
+                return False
+        for letter_item in letters_evaluated.values():
+            if 'absent' in letter_item.keys():
+                return False
+        return True
 
     def evaluate_letters(self, word, attempt):
         row = '[aria-label="Row %s"] [aria-roledescription="tile"]' % str(attempt)
         letters_evaluated = {}
         #TODO letters can be present and correct and it overwrites dict becoouse keys should bee uniqe
         for letter, tile, pos in zip(word, self.find_elements(row), range(5)):
-            letters_evaluated.update({letter: (pos, tile.get_attribute('data-state'))})
+            state = tile.get_attribute('data-state')
+            if letter in letters_evaluated:
+                if state != 'absent':
+                    if 'multiple' not in letters_evaluated[letter]:
+                        letters_evaluated[letter].update({'multiple': [2]})
+                    else:
+                        letters_evaluated[letter]['multiple'][0] += 1
+                if state in letters_evaluated[letter]:
+                    letters_evaluated[letter][state].append(pos)
+                else:
+                    letters_evaluated[letter].update({state: [pos]})
+            else:
+                letters_evaluated.update({letter: {state: [pos]}})
+
         return letters_evaluated
 
     def evaluate(self, possible_words, attempt, word, pass_requirements):
@@ -127,6 +147,11 @@ class MyTests(BaseCase):
             else:
                 pass_requirements['present'].update({letter: positions})
 
+        for letter_and_position in self.get_letter(letters_evaluated, 'multiple', word):
+            letter = letter_and_position[0]
+            positions = letter_and_position[1]
+            pass_requirements['multiple'].update({letter: positions})
+
     def score(self, word, distribution):
         score = 0
         s = set()
@@ -137,13 +162,14 @@ class MyTests(BaseCase):
 
         return score
     def solve(self, possible_words, word, letter_scores):
-        pass_requirements = {'correct': {}, 'present': {}, 'absent': {}}
+        pass_requirements = {'correct': {}, 'present': {}, 'absent': {}, 'multiple': {}}
         attempt = 1
         while attempt < 7:
             self.write(word)
             self.mprint((attempt, word))
             letters_evaluated = self.evaluate_letters(word, attempt)
-            if 'tbd' in [tup[1] for tup in letters_evaluated.values()]:
+            self.mprint(letters_evaluated)
+            if 'tbd' in letters_evaluated.values():
                 possible_words.remove(word)
                 self.mprint(possible_words)
                 b = False
@@ -156,7 +182,6 @@ class MyTests(BaseCase):
                         break
                 if b:
                     continue
-            self.mprint(letters_evaluated)
             self.add_requirements(pass_requirements, letters_evaluated, word)
             self.mprint(pass_requirements)
             if self.solved(letters_evaluated):
