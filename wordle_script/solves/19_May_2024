@@ -1,0 +1,13 @@
+{'a': 2348, 'b': 715, 'c': 964, 'd': 1181, 'e': 3009, 'f': 561, 'g': 679, 'h': 814, 'i': 1592, 'j': 89, 'k': 596, 'l': 1586, 'm': 843, 'n': 1285, 'o': 1915, 'p': 955, 'q': 53, 'r': 1910, 's': 3033, 't': 1585, 'u': 1089, 'v': 318, 'w': 505, 'x': 139, 'y': 886, 'z': 135}
+(1, 'crane')
+{'c': {'present': [0]}, 'r': {'absent': [1]}, 'a': {'absent': [2]}, 'n': {'absent': [3]}, 'e': {'absent': [4]}}
+{'correct': {}, 'present': {'c': [0]}, 'absent': {'r': [1], 'a': [2], 'n': [3], 'e': [4]}, 'multiple': {}}
+['which', 'music', 'thick', 'stick', 'touch', 'quick', 'block', 'topic', 'stock', 'pitch', 'stuck', 'lucky', 'ducks', 'shock', 'witch', 'focus', 'socks', 'flock', 'picks', 'ditch', 'scout', 'pluck', 'docks', 'locks', 'juicy', 'logic', 'pouch', 'slick', 'kicks', 'mucus', 'discs', 'ticks', 'scold', 'ducts', 'scoop', 'hitch', 'flick', 'bucks', 'spicy', 'licks', 'scoff', 'tucks', 'toxic', 'lucid', 'bitch', 'scowl', 'smock', 'mocks', 'scuff', 'mimic', 'hutch', 'mulch', 'scows', 'optic', 'scoot', 'vouch', 'icily', 'sucks', 'lucks', 'scull', 'filch', 'shuck', 'scums', 'pooch', 'pucks', 'gulch', 'wicks', 'mucks', 'locus', 'itchy', 'hocks', 'blocs', 'picky', 'stoic', 'butch', 'dicks', 'hooch', 'fichu', 'ducky', 'jocks', 'hocus', 'yucky', 'scuzz', 'socko', 'mooch', 'botch', 'hicks', 'disco', 'zilch', 'psych', 'sicko', 'dutch', 'mucky', 'duchy', 'locos', 'mucho', 'dicot', 'milch', 'ohmic', 'scops', 'fucks', 'dictu', 'bocks', 'licit', 'pocks', 'scudi', 'ioctl', 'pubic', 'wilco', 'schmo', 'scuds', 'lochs', 'flics', 'pocky', 'bocci', 'yogic', 'iodic', 'folic', 'sicks', 'mulct', 'scudo', 'micks', 'picot', 'spics', 'dicut', 'kicky', 'dicky']
+(2, 'which')
+{'w': {'absent': [0]}, 'h': {'present': [1], 'multiple': [2], 'correct': [4]}, 'i': {'present': [2]}, 'c': {'correct': [3]}}
+{'correct': {'h': [4], 'c': [3]}, 'present': {'c': [0], 'h': [1], 'i': [2]}, 'absent': {'r': [1], 'a': [2], 'n': [3], 'e': [4], 'w': [0]}, 'multiple': {'h': [2]}}
+['hitch']
+(3, 'hitch')
+{'h': {'correct': [0, 4], 'multiple': [2]}, 'i': {'correct': [1]}, 't': {'correct': [2]}, 'c': {'correct': [3]}}
+{'correct': {'h': [4, 0], 'c': [3], 'i': [1], 't': [2]}, 'present': {'c': [0], 'h': [1], 'i': [2]}, 'absent': {'r': [1], 'a': [2], 'n': [3], 'e': [4], 'w': [0]}, 'multiple': {'h': [2]}}
+'SOLVED IN 3 ATTEMPTS!'
