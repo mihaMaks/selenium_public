@@ -1,0 +1,21 @@
+{'a': 2348, 'b': 715, 'c': 964, 'd': 1181, 'e': 3009, 'f': 561, 'g': 679, 'h': 814, 'i': 1592, 'j': 89, 'k': 596, 'l': 1586, 'm': 843, 'n': 1285, 'o': 1915, 'p': 955, 'q': 53, 'r': 1910, 's': 3033, 't': 1585, 'u': 1089, 'v': 318, 'w': 505, 'x': 139, 'y': 886, 'z': 135}
+(1, 'crane')
+{'c': {'absent': [0]}, 'r': {'absent': [1]}, 'a': {'absent': [2]}, 'n': {'present': [3]}, 'e': {'absent': [4]}}
+{'correct': {}, 'present': {'n': [3]}, 'absent': {'c': [0], 'r': [1], 'a': [2], 'e': [4]}, 'multiple': {}}
+['until', 'night', 'known', 'shown', 'kinds', 'songs', 'knows', 'units', 'month', 'wings', 'winds', 'union', 'lungs', 'kings', 'finds', 'minds', 'sings', 'unity', 'funds', 'input', 'noisy', 'blown', 'spoon', 'fungi', 'minus', 'bonds', 'ponds', 'knots', 'ninth', 'links', 'nylon', 'flown', 'snowy', 'windy', 'pints', 'onion', 'fonts', 'sinks', 'bonus', 'hints', 'snows', 'sniff', 'hunts', 'snout', 'knobs', 'nymph', 'bunks', 'bison', 'pinto', 'unfit', 'dingy', 'snips', 'tongs', 'sunup', 'undid', 'snuff', 'binds', 'tints', 'monks', 'minks', 'unify', 'knits', 'junks', 'kinks', 'vinyl', 'pinks', 'winks', 'longs', 'mints', 'snobs', 'nooks', 'kinky', 'swoon', 'bingo', 'sinus', 'hinds', 'punks', 'bongs', 'ingot', 'junky', 'hunks', 'honks', 'snubs', 'punts', 'snoop', 'pinky', 'dints', 'nifty', 'lints', 'dunks', 'bunts', 'knoll', 'nobly', 'lingo', 'jingo', 'bongo', 'gongs', 'nutty', 'dinky', 'toxin', 'pylon', 'unzip', 'funky', 'minim', 'synod', 'unpin', 'dings', 'winos', 'snoot', 'dingo', 'unlit', 'nulls', 'nutsy', 'donut', 'jinks', 'numbs', 'pinup', 'bosun', 'snits', 'nobby', 'knish', 'infix', 'piton', 'gonzo', 'zingy', 'linty', 'mondo', 'fungo', 'pinko', 'zings', 'oinks', 'finks', 'minis', 'pings', 'sonly', 'futon', 'snots', 'jings', 'injun', 'solon', 'nippy', 'knops', 'fondu', 'unbox', 'punky', 'bunds', 'dungy', 'bunko', 'gunks', 'nimbi', 'mungs', 'unhip', 'tings', 'wonts', 'dinks', 'nihil', 'honky', 'snood', 'finis', 'boson', 'wonks', 'holon', 'quoin', 'nohow', 'bonks', 'hunky', 'zonks', 'knout', 'gunky', 'nitty', 'gluon', 'finif', 'oinky', 'bungs', 'dungs', 'funks', 'mungy', 'snugs', 'unhit', 'toyon', 'login', 'unwon', 'nooky', 'snook', 'noddy', 'unfix', 'lings', 'wonky']
+(2, 'until')
+{'u': {'absent': [0]}, 'n': {'present': [1]}, 't': {'absent': [2]}, 'i': {'present': [3]}, 'l': {'absent': [4]}}
+{'correct': {}, 'present': {'n': [3, 1], 'i': [3]}, 'absent': {'c': [0], 'r': [1], 'a': [2], 'e': [4], 'u': [0], 't': [2], 'l': [4]}, 'multiple': {}}
+['kinds', 'wings', 'winds', 'kings', 'finds', 'minds', 'sings', 'noisy', 'windy', 'sinks', 'bison', 'dingy', 'binds', 'minks', 'kinks', 'pinks', 'winks', 'kinky', 'bingo', 'hinds', 'pinky', 'jingo', 'dinky', 'dings', 'winos', 'dingo', 'jinks', 'zingy', 'pinko', 'zings', 'oinks', 'finks', 'pings', 'jings', 'nippy', 'nimbi', 'dinks', 'oinky']
+(3, 'kinds')
+{'k': {'absent': [0]}, 'i': {'correct': [1]}, 'n': {'correct': [2]}, 'd': {'present': [3]}, 's': {'absent': [4]}}
+{'correct': {'i': [1], 'n': [2]}, 'present': {'n': [3, 1], 'i': [3], 'd': [3]}, 'absent': {'c': [0], 'r': [1], 'a': [2], 'e': [4], 'u': [0], 't': [2], 'l': [4], 'k': [0], 's': [4]}, 'multiple': {}}
+['dingy', 'dingo']
+(4, 'dingy')
+{'d': {'correct': [0]}, 'i': {'correct': [1]}, 'n': {'correct': [2]}, 'g': {'correct': [3]}, 'y': {'absent': [4]}}
+{'correct': {'i': [1], 'n': [2], 'd': [0], 'g': [3]}, 'present': {'n': [3, 1], 'i': [3], 'd': [3]}, 'absent': {'c': [0], 'r': [1], 'a': [2], 'e': [4], 'u': [0], 't': [2], 'l': [4], 'k': [0], 's': [4], 'y': [4]}, 'multiple': {}}
+['dingo']
+(5, 'dingo')
+{'d': {'correct': [0]}, 'i': {'correct': [1]}, 'n': {'correct': [2]}, 'g': {'correct': [3]}, 'o': {'correct': [4]}}
+{'correct': {'i': [1], 'n': [2], 'd': [0], 'g': [3], 'o': [4]}, 'present': {'n': [3, 1], 'i': [3], 'd': [3]}, 'absent': {'c': [0], 'r': [1], 'a': [2], 'e': [4], 'u': [0], 't': [2], 'l': [4], 'k': [0], 's': [4], 'y': [4]}, 'multiple': {}}
+'SOLVED IN 5 ATTEMPTS!'
