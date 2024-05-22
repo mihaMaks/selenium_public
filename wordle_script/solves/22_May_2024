@@ -1,0 +1,13 @@
+{'a': 2348, 'b': 715, 'c': 964, 'd': 1181, 'e': 3009, 'f': 561, 'g': 679, 'h': 814, 'i': 1592, 'j': 89, 'k': 596, 'l': 1586, 'm': 843, 'n': 1285, 'o': 1915, 'p': 955, 'q': 53, 'r': 1910, 's': 3033, 't': 1585, 'u': 1089, 'v': 318, 'w': 505, 'x': 139, 'y': 886, 'z': 135}
+(1, 'crane')
+{'c': {'absent': [0]}, 'r': {'absent': [1]}, 'a': {'correct': [2]}, 'n': {'absent': [3]}, 'e': {'present': [4]}}
+{'correct': {'a': [2]}, 'present': {'e': [4]}, 'absent': {'c': [0], 'r': [1], 'n': [3]}, 'multiple': {}}
+['least', 'heavy', 'death', 'heads', 'beats', 'seats', 'leads', 'meals', 'teams', 'feast', 'beads', 'beast', 'peaks', 'seams', 'beams', 'deals', 'dealt', 'meats', 'seals', 'yeast', 'leaps', 'heats', 'leafy', 'beaks', 'heaps', 'feats', 'exalt', 'leash', 'leaks', 'leapt', 'leaky', 'exams', 'heath', 'heals', 'meaty', 'peals', 'mealy', 'leafs', 'deads', 'beaus', 'zeals', 'teals', 'veals', 'beady', 'heady', 'peaty', 'beaut', 'peaky', 'seamy', 'egads', 'teats', 'beaux', 'beaky', 'meads', 'email', 'weals', 'beamy', 'weald', 'teaks', 'peats']
+(2, 'least')
+{'l': {'present': [0]}, 'e': {'present': [1]}, 'a': {'correct': [2]}, 's': {'absent': [3]}, 't': {'correct': [4]}}
+{'correct': {'a': [2], 't': [4]}, 'present': {'e': [4, 1], 'l': [0]}, 'absent': {'c': [0], 'r': [1], 'n': [3], 's': [3]}, 'multiple': {}}
+['exalt']
+(3, 'exalt')
+{'e': {'correct': [0]}, 'x': {'correct': [1]}, 'a': {'correct': [2]}, 'l': {'correct': [3]}, 't': {'correct': [4]}}
+{'correct': {'a': [2], 't': [4], 'e': [0], 'x': [1], 'l': [3]}, 'present': {'e': [4, 1], 'l': [0]}, 'absent': {'c': [0], 'r': [1], 'n': [3], 's': [3]}, 'multiple': {}}
+'SOLVED IN 3 ATTEMPTS!'
