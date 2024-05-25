@@ -1,0 +1,17 @@
+{'a': 2348, 'b': 715, 'c': 964, 'd': 1181, 'e': 3009, 'f': 561, 'g': 679, 'h': 814, 'i': 1592, 'j': 89, 'k': 596, 'l': 1586, 'm': 843, 'n': 1285, 'o': 1915, 'p': 955, 'q': 53, 'r': 1910, 's': 3033, 't': 1585, 'u': 1089, 'v': 318, 'w': 505, 'x': 139, 'y': 886, 'z': 135}
+(1, 'crane')
+{'c': {'absent': [0]}, 'r': {'absent': [1]}, 'a': {'present': [2]}, 'n': {'present': [3]}, 'e': {'absent': [4]}}
+{'correct': {}, 'present': {'a': [2], 'n': [3]}, 'absent': {'c': [0], 'r': [1], 'e': [4]}, 'multiple': {}}
+['hands', 'woman', 'human', 'lands', 'final', 'wants', 'wagon', 'banks', 'nails', 'bands', 'tanks', 'sandy', 'pants', 'tonal', 'naval', 'basin', 'handy', 'hangs', 'sands', 'anvil', 'banjo', 'aunts', 'nasty', 'fangs', 'nasal', 'lanky', 'satin', 'dandy', 'pagan', 'baton', 'annoy', 'pansy', 'pangs', 'bangs', 'manly', 'gangs', 'hogan', 'panda', 'mason', 'mango', 'nomad', 'tangy', 'mania', 'yanks', 'divan', 'wands', 'wanly', 'novas', 'tunas', 'talon', 'annum', 'junta', 'kinda', 'salon', 'align', 'wanta', 'tango', 'natal', 'bandy', 'annul', 'anion', 'banal', 'mangy', 'natty', 'titan', 'annas', 'inlay', 'nappy', 'nodal', 'hanky', 'zonal', 'latin', 'tansy', 'ankhs', 'angst', 'axman', 'mynah', 'avian', 'noway', 'adman', 'antsy', 'gamin', 'unjam', 'panty', 'nabla', 'lanai', 'nabob', 'naiad', 'minas', 'manta', 'anima', 'panga', 'unman', 'ulnas', 'apian', 'taxon', 'japan', 'pavan', 'zayin', 'hanks', 'lapin', 'gonad', 'monad', 'mynas', 'antis', 'unsay', 'tangs', 'unmap', 'fanin', 'algin', 'ninja', 'unban', 'ixnay']
+(2, 'hands')
+{'h': {'absent': [0]}, 'a': {'present': [1]}, 'n': {'present': [2]}, 'd': {'absent': [3]}, 's': {'absent': [4]}}
+{'correct': {}, 'present': {'a': [2, 1], 'n': [3, 2]}, 'absent': {'c': [0], 'r': [1], 'e': [4], 'h': [0], 'd': [3], 's': [4]}, 'multiple': {}}
+['woman', 'anvil', 'align', 'anion', 'titan', 'inlay', 'axman', 'avian', 'noway', 'unjam', 'anima', 'unman', 'apian', 'unmap', 'algin', 'unban']
+(3, 'woman')
+{'w': {'absent': [0]}, 'o': {'absent': [1]}, 'm': {'absent': [2]}, 'a': {'correct': [3]}, 'n': {'correct': [4]}}
+{'correct': {'a': [3], 'n': [4]}, 'present': {'a': [2, 1], 'n': [3, 2]}, 'absent': {'c': [0], 'r': [1], 'e': [4], 'h': [0], 'd': [3], 's': [4], 'w': [0], 'o': [1], 'm': [2]}, 'multiple': {}}
+['titan', 'avian', 'apian', 'unban']
+(4, 'titan')
+{'t': {'correct': [0, 2], 'multiple': [2]}, 'i': {'correct': [1]}, 'a': {'correct': [3]}, 'n': {'correct': [4]}}
+{'correct': {'a': [3], 'n': [4], 't': [0, 2], 'i': [1]}, 'present': {'a': [2, 1], 'n': [3, 2]}, 'absent': {'c': [0], 'r': [1], 'e': [4], 'h': [0], 'd': [3], 's': [4], 'w': [0], 'o': [1], 'm': [2]}, 'multiple': {'t': [2]}}
+'SOLVED IN 4 ATTEMPTS!'
