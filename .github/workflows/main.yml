@@ -59,18 +59,20 @@ jobs:
       run: |
         cd wordle_script
         pytest wordle.py
+        pytest wordle2.py
 
     - name: move to dir # Move the generated files into output folder
       run: |
         cd wordle_script
         mkdir -p solves
-        mv *2024 solves
+        mv *2024* solves
+
     - name: Commit files # commit the output folder
       run: |
         git config --local user.email "maksbertoncelj@gmail.com"
         git config --local user.name "mihaMaks"
         git add wordle_script
-        git commit -m "Add changes"
+        git commit -m "Add new files daily"
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
       with:
