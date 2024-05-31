@@ -89,11 +89,11 @@ class MyTests(BaseCase):
     def evaluate_letters(self, word, attempt):
         row = '[aria-label="Row %s"] [aria-roledescription="tile"]' % str(attempt)
         letters_evaluated = {}
-        #TODO letters can be present and correct and it overwrites dict becoouse keys should bee uniqe
+
         for letter, tile, pos in zip(word, self.find_elements(row), range(5)):
             state = tile.get_attribute('data-state')
             if letter in letters_evaluated:
-                if state != 'absent':
+                if state != 'absent' and 'absent' not in letters_evaluated[letter]:
                     if 'multiple' not in letters_evaluated[letter]:
                         letters_evaluated[letter].update({'multiple': [2]})
                     else:
