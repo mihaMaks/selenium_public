@@ -190,7 +190,6 @@ class MyTests(BaseCase):
                 continue
             # GET LETTER FREQUENCY
             letter_scores = self.get_letter_scores(possible_words)
-            self.mprint(letter_scores)
 
             # EVALUATE WORDS
             best_words = []
