@@ -17,7 +17,7 @@ class MyTests(BaseCase):
         return l
 
     def mprint(self, s):
-        file_name = datetime.datetime.now().strftime('%d_%b_%Y')
+        file_name = datetime.datetime.now().strftime('%d_%b_%Y') + "_sets"
         f = open(file_name, 'a')
         f.write(s.__repr__())
         f.write('\n')
@@ -175,7 +175,7 @@ class MyTests(BaseCase):
         for lt in alphabet:
             distribution.update({lt: 0})
         for word in possible_words:
-            for lt in word:
+            for lt in set(l for l in word):
                 distribution[lt] = distribution[lt] + 1
         return distribution
 

@@ -15,9 +15,9 @@ def score(word, distribution):
         score += distribution[lt]
     return score
 
-vowels = ['a', 'e', 'i', 'o', 'u']
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
 all_words = get_words('wordlist_fives.txt')
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
 distribution = {}
 for lt in alphabet:
     distribution.update({lt: 0})
