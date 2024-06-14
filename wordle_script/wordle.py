@@ -201,7 +201,7 @@ class MyTests(BaseCase):
             self.mprint(best_words)
 
             # TYPE WORD IN BROWSER
-            word = best_words[0][0]
+            word = best_words[0]
             self.write(word)
             # READ PRESENCE OF LETTERS
             letters_evaluated = self.evaluate_letters(word, attempt)
