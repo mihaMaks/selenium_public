@@ -196,7 +196,7 @@ class MyTests(BaseCase):
             for wrd in possible_words:
                 best_words.append((wrd, self.score(wrd, letter_scores)))
             best_words.sort(key=lambda x: -x[1])
-            self.mprint(possible_words)
+            self.mprint(best_words)
 
             # TYPE WORD IN BROWSER
             word = best_words[0][0]
