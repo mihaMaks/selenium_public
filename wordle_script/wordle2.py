@@ -196,10 +196,12 @@ class MyTests(BaseCase):
             for wrd in possible_words:
                 best_words.append((wrd, self.score(wrd, letter_scores)))
             best_words.sort(key=lambda x: -x[1])
+            for w, i in zip(best_words, range(len(best_words))):
+                best_words[i] = w[0]
             self.mprint(best_words)
 
             # TYPE WORD IN BROWSER
-            word = best_words[0][0]
+            word = best_words[0]
             self.write(word)
             # READ PRESENCE OF LETTERS
             letters_evaluated = self.evaluate_letters(word, attempt)
