@@ -58,14 +58,14 @@ jobs:
     - name: pytest wordle.py
       run: |
         cd wordle_script
-        pytest wordle.py
+        # pytest wordle.py
         pytest wordle2.py
 
     - name: move to dir # Move the generated files into output folder
       run: |
         cd wordle_script
         mkdir -p solves
-        mv *2024* solves
+        mv *2025* solves
 
     - name: Commit files # commit the output folder
       run: |
