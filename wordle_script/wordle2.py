@@ -198,7 +198,8 @@ class MyTests(BaseCase):
             best_words.sort(key=lambda x: -x[1])
             for w, i in zip(best_words, range(len(best_words))):
                 best_words[i] = w[0]
-            self.mprint(best_words)
+            if attempt != 1:
+                self.mprint(best_words)
 
             # TYPE WORD IN BROWSER
             word = best_words[0]
