@@ -9,7 +9,7 @@ class Solve:
         self.file_name = file_name
         self.num_attempts = 0
         self.success = None
-        print(f"Reading solve file: {dir_name}/{file_name}")
+        # print(f"Reading solve file: {dir_name}/{file_name}")
         self.date = self.getDate(dir_name, file_name)
         self.correct_word = None
         self.gueses = []
@@ -22,7 +22,7 @@ class Solve:
 
     def readSolveFile(self, dir_name, file_name):
         f = open(f"{self.root_dir}/{dir_name}/{file_name}", 'r')
-        print(f"{self.root_dir}/{dir_name}/{file_name}")
+        # print(f"{self.root_dir}/{dir_name}/{file_name}")
         lines = f.readlines()
         f.close()
         # print(len(lines))
@@ -51,7 +51,7 @@ class Solve:
     
     def getDate(self, dir_name, file_name):
         date = datetime.datetime.strptime('_'.join(file_name.split('_')[:-1]), '%d_%b_%Y').date()
-        print(f"Date: {date}")
+        # print(f"Date: {date}")
         return date
 
     def print(self):
@@ -78,12 +78,16 @@ def load_attempts(dir_name):
 
 # print(os.listdir("solves/"))
 dir_names = [name for name in os.listdir("solves/") if os.path.isdir(os.path.join("solves/", name))]
-number_of_attempts_by_day_if_successful = {}
 avg_num_attempts_by_month = {}
 num_attempts_by_month = []
+
 for dir_name in dir_names:
     # print(load_attempts(dir_name))
     
+    number_of_solves_by_attempts_if_successful = {}
+
+    
+
     attempts = load_attempts(dir_name)
     num_attempts_total = 0
     solves = [Solve(dir_name, fname) for fname in attempts]
@@ -92,7 +96,7 @@ for dir_name in dir_names:
     # add to dict number of attempts by day if successful
     for solve in solves:
         if solve.success:
-            number_of_attempts_by_day_if_successful[solve.date] = solve.num_attempts
+            number_of_solves_by_attempts_if_successful[solve.num_attempts] = number_of_solves_by_attempts_if_successful[solve.num_attempts] + 1 if solve.num_attempts in number_of_solves_by_attempts_if_successful.keys() else 1
             solved += 1
             num_attempts_total += solve.num_attempts
         else:
@@ -100,16 +104,24 @@ for dir_name in dir_names:
     avg_num_attempts_by_month.update({dir_name: [num_attempts_total/(solved if solved > 0 else 0), solved]})
     num_attempts_by_month.append(solved)
     print(f"Directory: {dir_name}")
-    print(f"Number of solved: {solved}")
-    print(f"Number of not solved: {not_solved}")
+    print(f"\tNumber of solved: {solved}")
+    print(f"\t\tNumber of not solved: {not_solved}")
 
     import matplotlib.pyplot as plt
-    plt.hist(number_of_attempts_by_day_if_successful.values(), bins=range(1, 8), align='left', rwidth=0.8)
-    plt.xticks(range(1, 8))
-    plt.xlabel('Number of attempts')
-    plt.ylabel('Number of days')
-    plt.title(f'Number of attempts by day if successful for {dir_name}')
+    plt.bar(
+    number_of_solves_by_attempts_if_successful.keys(),    # x-axis: keys
+    number_of_solves_by_attempts_if_successful.values(),  # y-axis: values
+    width=0.8, align='center', color='skyblue', edgecolor='black')
+
+    for x, y in number_of_solves_by_attempts_if_successful.items():
+        plt.text(x, y + 0.1, str(y), ha='center', va='bottom')
+
+    plt.xticks(range(1, 8))  # ensure ticks are 1..7, even if some bars are missing
+    plt.xlabel("Attempts")
+    plt.ylabel("Number of solves")
+    plt.title("Number of solves by attempts for {dir_name}".format(dir_name=dir_name))
     plt.savefig(f'solves/{dir_name}_attempts_histogram.png')
+    plt.close()
     
 # plot number of attempts by month
 months = list(avg_num_attempts_by_month.keys())
